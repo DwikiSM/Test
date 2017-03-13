@@ -11,14 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.welcome');
-});
-
-Route::get('example', function() {
-    return view('pages.example');
-});
-
-Route::get('logout', function() {
-    return view('pages.logout');
-});
+Route::get('/', 'LoginController@index');
+Route::get('test', 'TestController@index')->middleware('otentikasi');
+Route::get('logout', 'LogoutController@index');
